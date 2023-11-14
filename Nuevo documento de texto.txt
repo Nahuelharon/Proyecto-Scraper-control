@@ -1,0 +1,91 @@
+urllib3.exceptions.SSLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 845, in urlopen
+    retries = retries.increment(
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='sigof2.sofse.gob.ar', port=443): Max retries exceeded with url: /planillonVue2/38 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Cosas\App\proyectoPandas.py", line 12, in <module>
+    response = requests.get(url, auth=HttpNtlmAuth(username,password))
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\adapters.py", line 517, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='sigof2.sofse.gob.ar', port=443): Max retries exceeded with url: /planillonVue2/38 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)')))
+##########################################################################################################################
+
+Warning (from warnings module):
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 1100
+    warnings.warn(
+InsecureRequestWarning: Unverified HTTPS request is being made to host '172.22.10.121'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+
+Warning (from warnings module):
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 1100
+    warnings.warn(
+InsecureRequestWarning: Unverified HTTPS request is being made to host '172.22.10.121'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+
+Warning (from warnings module):
+  File "H:\Cosas\App\proyectoPandas.py", line 31
+    df = pd.read_html(str(tabla))[0]
+FutureWarning: Passing literal html to 'read_html' is deprecated and will be removed in a future version. To read from a literal string, wrap it in a 'StringIO' object.
+Traceback (most recent call last):
+  File "H:\Cosas\App\proyectoPandas.py", line 31, in <module>
+    df = pd.read_html(str(tabla))[0]
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\html.py", line 1245, in read_html
+    return _parse(
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\html.py", line 1008, in _parse
+    raise retained
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\html.py", line 988, in _parse
+    tables = p.parse_tables()
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\html.py", line 248, in parse_tables
+    tables = self._parse_tables(self._build_doc(), self.match, self.attrs)
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\html.py", line 603, in _parse_tables
+    raise ValueError("No tables found")
+ValueError: No tables found
+
+#############################################################################################################################
+
+Traceback (most recent call last):
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\common\driver_finder.py", line 38, in get_path
+    path = SeleniumManager().driver_location(options) if path is None else path
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\common\selenium_manager.py", line 94, in driver_location
+    output = self.run(args)
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\common\selenium_manager.py", line 140, in run
+    raise WebDriverException(f"Unsuccessful command executed: {command}.\n{result}{stderr}")
+selenium.common.exceptions.WebDriverException: Message: Unsuccessful command executed: C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\common\windows\selenium-manager.exe --browser chrome --output json.
+{'code': 65, 'message': 'expected value at line 1 column 1', 'driver_path': '', 'browser_path': ''}
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "H:\Cosas\App\proyectoPandas2.py", line 7, in <module>
+    driver = webdriver.Chrome()
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 45, in __init__
+    super().__init__(
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\chromium\webdriver.py", line 51, in __init__
+    self.service.path = DriverFinder.get_path(self.service, options)
+  File "C:\Users\facundo.guerrero\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\common\driver_finder.py", line 41, in get_path
+    raise NoSuchDriverException(msg) from err
+selenium.common.exceptions.NoSuchDriverException: Message: Unable to obtain driver for chrome using Selenium Manager.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+###################################################################
+Exception managing chrome: expected value at line 1 column 1
+Traceback (most recent call last):
+  File "H:\Cosas\App\proyectoPandas2.py", line 20, in <module>
+    driver.find_element_by_name('username').send_keys(username)
+AttributeError: 'WebDriver' object has no attribute 'find_element_by_name'
